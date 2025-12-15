@@ -18,24 +18,29 @@ Backend para una aplicación web de gestión de reservas de salas de biblioteca.
 
 ## ⚙️ Instalación
 
-1. Clonar el repositorio y navegar a la carpeta backend
+1. Clonar el repositorio
 
-2. Instalar dependencias:
-```bash
-npm install
-```
-
-3. Configurar variables de entorno:
-```bash
-cp .env.example .env
-```
-
-4. Iniciar MongoDB con Docker:
+2. Iniciar MongoDB con Docker:
 ```bash
 docker-compose up -d
 ```
 
-5. Cargar datos de prueba
+3. navegar a la carpeta backend
+```bash
+cd backend
+```
+
+4. Instalar dependencias:
+```bash
+npm install
+```
+
+5. Configurar variables de entorno:
+```bash
+cp .env.example .env
+```
+
+6. Cargar datos de prueba
 ```bash
 node data/seed.js -i
 ```
@@ -124,7 +129,7 @@ Authorization: Bearer <token>
 ```env
 PORT=5000
 MONGODB_URI=mongodb://localhost:27017/biblioteca
-JWT_SECRET=tu_clave_secreta
+JWT_SECRET=biblioteca_secret_key_2025
 JWT_EXPIRE=7d
 NODE_ENV=development
 ```
