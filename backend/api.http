@@ -1,0 +1,90 @@
+### Registrar Usuario
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "nombre": "Daniel Guaman",
+  "email": "adguaman4@espe.edu.ec",
+  "password": "usuario123",
+  "rol": "usuario"
+}
+
+###
+
+### Login
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "adguaman4@espe.edu.ec",
+  "password": "admin123"
+}
+
+###
+
+### Obtener Usuario Actual
+GET http://localhost:5000/api/auth/me
+Authorization: Bearer TU_TOKEN_AQUI
+
+###
+
+### Obtener todas las salas
+GET http://localhost:5000/api/salas
+
+###
+
+### Obtener sala por ID
+GET http://localhost:5000/api/salas/SALA_ID
+
+###
+
+### Crear sala (Admin)
+POST http://localhost:5000/api/salas
+Content-Type: application/json
+Authorization: Bearer TU_TOKEN_ADMIN_AQUI
+
+{
+  "nombre": "Sala Multimedia",
+  "capacidad": 20,
+  "ubicacion": "Piso 1, Ala Oeste",
+  "descripcion": "Sala equipada con tecnología multimedia",
+  "equipamiento": ["Computadoras", "Proyector", "WiFi"],
+  "disponible": true
+}
+
+###
+
+### Verificar disponibilidad
+GET http://localhost:5000/api/salas/SALA_ID/disponibilidad?fechaInicio=2025-12-15T10:00:00&fechaFin=2025-12-15T12:00:00
+
+###
+
+### Crear reserva
+POST http://localhost:5000/api/reservas
+Content-Type: application/json
+Authorization: Bearer TU_TOKEN_AQUI
+
+{
+  "sala": "SALA_ID",
+  "fechaInicio": "2025-12-15T10:00:00",
+  "fechaFin": "2025-12-15T12:00:00",
+  "motivo": "Estudio en grupo"
+}
+
+###
+
+### Obtener mis reservas
+GET http://localhost:5000/api/reservas
+Authorization: Bearer TU_TOKEN_AQUI
+
+###
+
+### Obtener reserva por ID
+GET http://localhost:5000/api/reservas/RESERVA_ID
+Authorization: Bearer TU_TOKEN_AQUI
+
+###
+
+### Cancelar reserva
+DELETE http://localhost:5000/api/reservas/RESERVA_ID
+Authorization: Bearer TU_TOKEN_AQUI

@@ -1,0 +1,42 @@
+{
+  "usuarios": [
+    {
+      "nombre": "Daniel Guaman",
+      "email": "adguaman4@espe.edu.ec",
+      "password": "admin123",
+      "rol": "admin"
+    },
+    {
+      "nombre": "Kevin Amaguana",
+      "email": "kamaguana@espe.edu.ec",
+      "password": "kevin123",
+      "rol": "usuario"
+    }
+  ],
+  "salas": [
+    {
+      "nombre": "Sala de Estudio 1",
+      "capacidad": 6,
+      "ubicacion": "Piso 1, Ala Norte",
+      "descripcion": "Sala tranquila ideal para estudio en grupo",
+      "equipamiento": ["Pizarra", "Proyector", "WiFi"],
+      "disponible": true
+    },
+    {
+      "nombre": "Sala de Lectura",
+      "capacidad": 12,
+      "ubicacion": "Piso 2, Ala Sur",
+      "descripcion": "Sala amplia con iluminación natural",
+      "equipamiento": ["WiFi", "Enchufes"],
+      "disponible": true
+    },
+    {
+      "nombre": "Sala de Conferencias",
+      "capacidad": 30,
+      "ubicacion": "Piso 3, Ala Este",
+      "descripcion": "Sala para eventos y presentaciones",
+      "equipamiento": ["Proyector", "Sistema de audio", "Aire acondicionado", "WiFi"],
+      "disponible": true
+    }
+  ]
+}
