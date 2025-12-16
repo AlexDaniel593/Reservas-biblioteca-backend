@@ -17,11 +17,14 @@ mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('✅ Conectado a MongoDB'))
   .catch(err => console.error('❌ Error al conectar a MongoDB:', err));
 
-// Documentación Swagger
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, {
-  customCss: '.swagger-ui .topbar { display: none }',
-  customSiteTitle: 'API Biblioteca - Documentación'
-}));
+// Swagger UI (HTML)
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, { explorer: true }));
+
+// Swagger JSON (para ZAP, Postman, etc.)
+app.get('/api-docs.json', (req, res) => {
+  res.setHeader('Content-Type', 'application/json');
+  res.status(200).send(swaggerSpec);
+});
 
 // Ruta de bienvenida
 app.get('/', (req, res) => {
